@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="ApiServiceDefinitions" targetNamespace="http://webtest.skillcheck.com" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://webtest.skillcheck.com" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types/>
+  <s0:message name="startSession">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="accountId" type="s1:string"/>
+  </s0:message>
+  <s0:message name="startSessionResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="getETicket">
+    <s0:part name="pKey" type="s1:string"/>
+    <s0:part name="docHRXML" type="s1:string"/>
+  </s0:message>
+  <s0:message name="getETicketResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:portType name="ApiService">
+    <s0:operation name="startSession" parameterOrder="username password accountId">
+      <s0:input message="s2:startSession"/>
+      <s0:output message="s2:startSessionResponse"/>
+    </s0:operation>
+    <s0:operation name="getETicket" parameterOrder="pKey docHRXML">
+      <s0:input message="s2:getETicket"/>
+      <s0:output message="s2:getETicketResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="ApiServiceSoapBinding" type="s2:ApiService">
+    <s3:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="startSession">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password accountId" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="getETicket">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="pKey docHRXML" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="ApiService">
+    <s0:port binding="s2:ApiServiceSoapBinding" name="ApiServiceSoapPort">
+      <s3:address location="http://localhost:8080/onlinetesting/services/ApiService"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

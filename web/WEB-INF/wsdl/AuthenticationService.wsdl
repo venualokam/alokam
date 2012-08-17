@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="AuthenticationServiceDefinitions" targetNamespace="http://webtest.skillcheck.com" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://webtest.skillcheck.com" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types/>
+  <s0:message name="Authenticate">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="accountId" type="s1:string"/>
+  </s0:message>
+  <s0:message name="AuthenticateResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PasswordStrengthValidation">
+    <s0:part name="password" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PasswordStrengthValidationResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PasswordChangeRequest">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="accountId" type="s1:string"/>
+    <s0:part name="currentPassword" type="s1:string"/>
+    <s0:part name="newPassword" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PasswordChangeRequestResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PasswordResetRequest">
+    <s0:part name="emailAddress" type="s1:string"/>
+    <s0:part name="userName" type="s1:string"/>
+    <s0:part name="accountId" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PasswordResetRequestResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:portType name="Authentication">
+    <s0:operation name="Authenticate" parameterOrder="username password accountId">
+      <s0:input message="s2:Authenticate"/>
+      <s0:output message="s2:AuthenticateResponse"/>
+    </s0:operation>
+    <s0:operation name="PasswordStrengthValidation" parameterOrder="password">
+      <s0:input message="s2:PasswordStrengthValidation"/>
+      <s0:output message="s2:PasswordStrengthValidationResponse"/>
+    </s0:operation>
+    <s0:operation name="PasswordChangeRequest" parameterOrder="username accountId currentPassword newPassword">
+      <s0:input message="s2:PasswordChangeRequest"/>
+      <s0:output message="s2:PasswordChangeRequestResponse"/>
+    </s0:operation>
+    <s0:operation name="PasswordResetRequest" parameterOrder="emailAddress userName accountId">
+      <s0:input message="s2:PasswordResetRequest"/>
+      <s0:output message="s2:PasswordResetRequestResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="AuthenticationServiceSoapBinding" type="s2:Authentication">
+    <s3:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="Authenticate">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password accountId" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="PasswordStrengthValidation">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="password" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="PasswordChangeRequest">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username accountId currentPassword newPassword" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="PasswordResetRequest">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="emailAddress userName accountId" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="AuthenticationService">
+    <s0:port binding="s2:AuthenticationServiceSoapBinding" name="AuthenticationSoapPort">
+      <s3:address location="http://localhost:8080/test/services/AuthenticationImpl"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

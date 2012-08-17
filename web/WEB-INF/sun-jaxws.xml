@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
+ <endpoint name="helloworld" implementation="example.HelloWorld" url-pattern="/services/helloWorld">
+
+    <handler-chains xmlns="http://java.sun.com/xml/ns/javaee"><handler-chain><handler><handler-class>example.handler.JAXBPayloadLoggingLogicalHandler</handler-class></handler></handler-chain></handler-chains>
+     
+     </endpoint>
+     <endpoint name="MTOMImpl" implementation="alokam.MTOMImpl" url-pattern="/alokam/MTOMImpl">
+
+    <handler-chains xmlns="http://java.sun.com/xml/ns/javaee"><handler-chain><handler><handler-class>example.handler.JAXBPayloadLoggingLogicalHandler</handler-class></handler></handler-chain></handler-chains>
+
+     </endpoint>
+    <endpoint
+            name='Hello'
+            implementation='session.server.Hello'
+            url-pattern='/services/Hello'/>
+    <endpoint
+            name='HelloService'
+            implementation='asyanchronusWEBService.HelloImpl'
+            url-pattern='/services/HelloService'>
+         <handler-chains xmlns="http://java.sun.com/xml/ns/javaee"><handler-chain><handler><handler-class>example.handler.JAXBPayloadLoggingLogicalHandler</handler-class></handler></handler-chain></handler-chains>
+
+     </endpoint>
+
+    <endpoint
+            name='AuthenticationImpl'
+            implementation='com.skillcheck.web_management.services.AuthenticationImpl'
+            url-pattern='/services/AuthenticationImpl' wsdl="WEB-INF/wsdl/AuthenticationService.wsdl" service="{http://webtest.skillcheck.com}AuthenticationService"/>
+</endpoints>
