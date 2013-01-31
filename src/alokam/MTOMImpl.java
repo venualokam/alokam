@@ -11,7 +11,7 @@ import javax.xml.ws.soap.MTOM;
 public class MTOMImpl {
   @WebMethod
   public String echoBinaryAsString(byte[] bytes) {
-	  System.out.println("venu alokam --ccc----xczxc asd--");
+	  System.out.println("venu alokam --ccc---vv-xczxc asd--");
     return new String(bytes);
 
   }
