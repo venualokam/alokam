@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-2b01  svn-revision#13122. --><s0:definitions xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://webtest.skillcheck.com" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" name="LicenseActivationServiceDefinitions" targetNamespace="http://webtest.skillcheck.com">
+  <s0:types/>
+  <s0:message name="licenseStatus">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="invoice" type="s1:string"/>
+  </s0:message>
+  <s0:message name="licenseStatusResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="activateLicense">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="requestCode" type="s1:string"/>
+    <s0:part name="IP" type="s1:string"/>
+  </s0:message>
+  <s0:message name="activateLicenseResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="resetLicense">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="invoice" type="s1:string"/>
+    <s0:part name="IP" type="s1:string"/>
+  </s0:message>
+  <s0:message name="resetLicenseResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="createLicense">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="invoice" type="s1:string"/>
+    <s0:part name="IP" type="s1:string"/>
+  </s0:message>
+  <s0:message name="createLicenseResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="isLicenseAvailable">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="invoice" type="s1:string"/>
+  </s0:message>
+  <s0:message name="isLicenseAvailableResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="disableLicense">
+    <s0:part name="username" type="s1:string"/>
+    <s0:part name="password" type="s1:string"/>
+    <s0:part name="invoice" type="s1:string"/>
+    <s0:part name="IP" type="s1:string"/>
+  </s0:message>
+  <s0:message name="disableLicenseResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:portType name="LicenseActivation">
+    <s0:operation name="licenseStatus" parameterOrder="username password invoice">
+      <s0:input message="s2:licenseStatus"/>
+      <s0:output message="s2:licenseStatusResponse"/>
+    </s0:operation>
+    <s0:operation name="activateLicense" parameterOrder="username password requestCode IP">
+      <s0:input message="s2:activateLicense"/>
+      <s0:output message="s2:activateLicenseResponse"/>
+    </s0:operation>
+    <s0:operation name="resetLicense" parameterOrder="username password invoice IP">
+      <s0:input message="s2:resetLicense"/>
+      <s0:output message="s2:resetLicenseResponse"/>
+    </s0:operation>
+    <s0:operation name="createLicense" parameterOrder="username password invoice IP">
+      <s0:input message="s2:createLicense"/>
+      <s0:output message="s2:createLicenseResponse"/>
+    </s0:operation>
+    <s0:operation name="isLicenseAvailable" parameterOrder="username password invoice">
+      <s0:input message="s2:isLicenseAvailable"/>
+      <s0:output message="s2:isLicenseAvailableResponse"/>
+    </s0:operation>
+    <s0:operation name="disableLicense" parameterOrder="username password invoice IP">
+      <s0:input message="s2:disableLicense"/>
+      <s0:output message="s2:disableLicenseResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="LicenseActivationServiceSoapBinding" type="s2:LicenseActivation">
+    <s3:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="licenseStatus">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password invoice" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="activateLicense">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password requestCode IP" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="resetLicense">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password invoice IP" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="createLicense">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password invoice IP" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="isLicenseAvailable">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password invoice" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="disableLicense">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="username password invoice IP" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="LicenseActivationService">
+    <s0:port binding="s2:LicenseActivationServiceSoapBinding" name="LicenseActivationSoapPort">
+      <s3:address location="http://localhost:8080/onlinetesting/services/LicenseActivation"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

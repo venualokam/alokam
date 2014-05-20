@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="Unnamed">
+    <CLASSES>
+      <root url="file://D:/Projects/NavTrack2/lib/other" />
+      <root url="file://D:/Projects/NavTrack2/lib/poi" />
+      <root url="file://D:/Projects/NavTrack2/lib/jakarta-commons" />
+      <root url="file://D:/Projects/NavTrack2/lib/jakarta-taglibs" />
+      <root url="file://D:/Projects/NavTrack2/lib/spring" />
+      <root url="file://D:/Projects/NavTrack2/lib/velocity" />
+      <root url="file://D:/Projects/NavTrack2/lib/http" />
+      <root url="file://D:/Projects/NavTrack2/lib/hibernate" />
+      <root url="file://D:/Projects/NavTrack2/lib/geronimo" />
+      <root url="file://D:/Projects/NavTrack2/lib/cxf" />
+      <root url="file://D:/onlineTestingRepo/selection/OT/onlinetesting/WebContent/WEB-INF/lib" />
+      <root url="jar://D:/Projects/j2ssh-core-0.2.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://D:/onlineTestingRepo/selection/OT/onlinetesting/WebContent/WEB-INF/lib" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/cxf" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/geronimo" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/hibernate" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/http" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/jakarta-commons" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/jakarta-taglibs" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/other" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/poi" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/spring" recursive="false" />
+    <jarDirectory url="file://D:/Projects/NavTrack2/lib/velocity" recursive="false" />
+  </library>
+</component>

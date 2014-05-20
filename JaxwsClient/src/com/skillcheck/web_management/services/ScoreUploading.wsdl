@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2-b13 (branches/2.2-6964; 2012-01-09T18:04:18+0000) JAXWS-RI/2.2.6-promoted-b20 JAXWS/2.2 svn-revision#unknown. --><s0:definitions xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://webtest.skillcheck.com" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" name="ScoreUploadingServiceDefinitions" targetNamespace="http://webtest.skillcheck.com">
+  <s0:types/>
+  <s0:message name="ValidateLicense">
+    <s0:part name="licenseID" type="s1:string"/>
+  </s0:message>
+  <s0:message name="ValidateLicenseResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PostLicense">
+    <s0:part name="clientAccountID" type="s1:string"/>
+    <s0:part name="clientUsername" type="s1:string"/>
+    <s0:part name="clientPassword" type="s1:string"/>
+    <s0:part name="licenseID" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PostLicenseResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PostScore">
+    <s0:part name="clientAccountID" type="s1:string"/>
+    <s0:part name="clientUsername" type="s1:string"/>
+    <s0:part name="clientPassword" type="s1:string"/>
+    <s0:part name="talentscoutData" type="s1:string"/>
+    <s0:part name="scoreData" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PostScoreResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="AccountQuery">
+    <s0:part name="licenseID" type="s1:string"/>
+    <s0:part name="clientAccountID" type="s1:string"/>
+    <s0:part name="clientUsername" type="s1:string"/>
+    <s0:part name="clientPassword" type="s1:string"/>
+  </s0:message>
+  <s0:message name="AccountQueryResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PostNewTest">
+    <s0:part name="clientAccountID" type="s1:string"/>
+    <s0:part name="clientUsername" type="s1:string"/>
+    <s0:part name="clientPassword" type="s1:string"/>
+    <s0:part name="testID" type="s1:string"/>
+    <s0:part name="testName" type="s1:string"/>
+    <s0:part name="reportType" type="s1:string"/>
+    <s0:part name="showOptions" type="s1:string"/>
+    <s0:part name="reportSettings" type="s1:string"/>
+  </s0:message>
+  <s0:message name="PostNewTestResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="AccountCreate">
+    <s0:part name="licenseID" type="s1:string"/>
+    <s0:part name="emailAddr" type="s1:string"/>
+  </s0:message>
+  <s0:message name="AccountCreateResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:message name="TestExists">
+    <s0:part name="clientAccountID" type="s1:string"/>
+    <s0:part name="clientUsername" type="s1:string"/>
+    <s0:part name="clientPassword" type="s1:string"/>
+    <s0:part name="testID" type="s1:string"/>
+    <s0:part name="testName" type="s1:string"/>
+  </s0:message>
+  <s0:message name="TestExistsResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:portType name="ScoreUploading">
+    <s0:operation name="ValidateLicense" parameterOrder="licenseID">
+      <s0:input message="s2:ValidateLicense"/>
+      <s0:output message="s2:ValidateLicenseResponse"/>
+    </s0:operation>
+    <s0:operation name="PostLicense" parameterOrder="clientAccountID clientUsername clientPassword licenseID">
+      <s0:input message="s2:PostLicense"/>
+      <s0:output message="s2:PostLicenseResponse"/>
+    </s0:operation>
+    <s0:operation name="PostScore" parameterOrder="clientAccountID clientUsername clientPassword talentscoutData scoreData">
+      <s0:input message="s2:PostScore"/>
+      <s0:output message="s2:PostScoreResponse"/>
+    </s0:operation>
+    <s0:operation name="AccountQuery" parameterOrder="licenseID clientAccountID clientUsername clientPassword">
+      <s0:input message="s2:AccountQuery"/>
+      <s0:output message="s2:AccountQueryResponse"/>
+    </s0:operation>
+    <s0:operation name="PostNewTest" parameterOrder="clientAccountID clientUsername clientPassword testID testName reportType showOptions reportSettings">
+      <s0:input message="s2:PostNewTest"/>
+      <s0:output message="s2:PostNewTestResponse"/>
+    </s0:operation>
+    <s0:operation name="AccountCreate" parameterOrder="licenseID emailAddr">
+      <s0:input message="s2:AccountCreate"/>
+      <s0:output message="s2:AccountCreateResponse"/>
+    </s0:operation>
+    <s0:operation name="TestExists" parameterOrder="clientAccountID clientUsername clientPassword testID testName">
+      <s0:input message="s2:TestExists"/>
+      <s0:output message="s2:TestExistsResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="ScoreUploadingServiceSoapBinding" type="s2:ScoreUploading">
+    <s3:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="ValidateLicense">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="licenseID" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="PostLicense">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="clientAccountID clientUsername clientPassword licenseID" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="PostScore">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="clientAccountID clientUsername clientPassword talentscoutData scoreData" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="AccountQuery">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="licenseID clientAccountID clientUsername clientPassword" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="PostNewTest">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="clientAccountID clientUsername clientPassword testID testName reportType showOptions reportSettings" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="AccountCreate">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="licenseID emailAddr" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="TestExists">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="clientAccountID clientUsername clientPassword testID testName" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="ScoreUploadingService">
+    <s0:port binding="s2:ScoreUploadingServiceSoapBinding" name="ScoreUploadingSoapPort">
+      <s3:address location="http://localhost:8080/onlinetesting/services/ScoreUploading"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

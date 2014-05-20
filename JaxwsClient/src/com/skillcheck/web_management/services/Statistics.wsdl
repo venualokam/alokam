@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.6-2b01  svn-revision#13122. --><s0:definitions xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://webtest.skillcheck.com" xmlns:s3="http://schemas.xmlsoap.org/wsdl/soap/" name="StatisticsServiceDefinitions" targetNamespace="http://webtest.skillcheck.com">
+  <s0:types/>
+  <s0:message name="GetAccountStatistics">
+    <s0:part name="clientAccountID" type="s1:string"/>
+    <s0:part name="clientUsername" type="s1:string"/>
+    <s0:part name="clientPassword" type="s1:string"/>
+  </s0:message>
+  <s0:message name="GetAccountStatisticsResponse">
+    <s0:part name="return" type="s1:string"/>
+  </s0:message>
+  <s0:portType name="Statistics">
+    <s0:operation name="GetAccountStatistics" parameterOrder="clientAccountID clientUsername clientPassword">
+      <s0:input message="s2:GetAccountStatistics"/>
+      <s0:output message="s2:GetAccountStatisticsResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="StatisticsServiceSoapBinding" type="s2:Statistics">
+    <s3:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="GetAccountStatistics">
+      <s3:operation soapAction="" style="rpc"/>
+      <s0:input>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="clientAccountID clientUsername clientPassword" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s3:body namespace="http://webtest.skillcheck.com" parts="return" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="StatisticsService">
+    <s0:port binding="s2:StatisticsServiceSoapBinding" name="StatisticsSoapPort">
+      <s3:address location="http://localhost:8080/onlinetesting/services/Statistics"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>
